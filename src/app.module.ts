@@ -2,8 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Usuario } from './usuarios/entity/usuario.entity';
-import { UsuarioModule } from './usuarios/usuario.module';
+import { Usuario } from './domain/entities/usuario.entity';
+import { DomainModule } from './domain/domain.module';
+import { AplicationModule } from './application/application.module';
+import { InfrastructureModule } from './infrastructure/infrastructure.module';
 
 @Module({
   imports: [
@@ -18,7 +20,9 @@ import { UsuarioModule } from './usuarios/usuario.module';
       synchronize: true,
 
     }),
-    UsuarioModule,
+    DomainModule,
+    AplicationModule,
+    InfrastructureModule,
     
   ],
   controllers: [AppController],
