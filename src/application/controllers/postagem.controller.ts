@@ -1,14 +1,18 @@
+import { CreatePostagemDto } from '../dtos/create-postagem.dto';
 import { Body, Controller, Get, Post } from "@nestjs/common";
 import { PostagemService } from "../../domain/services/postagem.service";
 import { Postagem } from "../../domain/entities/postagem.entity";
+import { ApiTags } from '@nestjs/swagger';
 
+
+@ApiTags('Postagem')
 @Controller('postagens')
 export class PostagemController {
 
     constructor(private readonly postagemService: PostagemService) {}
 
     @Post()
-    createPostagem(@Body() postagem: Postagem) {
+    createPostagem(@Body() postagem: CreatePostagemDto) {
         return this.postagemService.createPostagem(postagem)
     }
 

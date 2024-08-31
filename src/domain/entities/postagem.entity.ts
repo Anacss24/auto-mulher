@@ -1,19 +1,26 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Usuario } from "./usuario.entity";
+import { ApiProperty } from "@nestjs/swagger";
 
 @Entity()
 export class Postagem {
     
     @PrimaryGeneratedColumn('uuid')
+    @ApiProperty()
     public id: string
 
     @Column()
+    @ApiProperty()
     public titulo: string
 
     @Column()
+    @ApiProperty()
     public descricao: string
 
-    @ManyToOne(() => Usuario, usuario => usuario.postagens)
+    @ApiProperty({ type: () => Usuario})
+    @ManyToOne(() => Usuario, usuario => usuario.postagens, {
+        onDelete: 'CASCADE'
+    })
     usuario: Usuario;
 
     constructor(

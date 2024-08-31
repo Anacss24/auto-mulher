@@ -1,3 +1,4 @@
+import { CreatePostagemDto } from '../../application/dtos/create-postagem.dto';
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Postagem } from "../entities/postagem.entity";
@@ -11,7 +12,7 @@ export class PostagemService {
 
    ) { }
 
-   async createPostagem(postagem: Postagem): Promise<Postagem> {
+   async createPostagem(postagem: CreatePostagemDto): Promise<Postagem> {
     return await this.postagemRepository.save(postagem)
    }
 

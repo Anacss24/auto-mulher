@@ -1,11 +1,13 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ConquistaStatus } from "../enums/conquista-status.enum";
 import { Usuario } from "./usuario.entity";
+import { ApiProperty } from "@nestjs/swagger";
 
 @Entity()
 export class Conquista {
     
     @PrimaryGeneratedColumn('uuid')
+    @ApiProperty()
     public id: string
 
     @Column({
@@ -13,15 +15,21 @@ export class Conquista {
         enum: ConquistaStatus,
         default: ConquistaStatus.PRIVADO
     })
+    @ApiProperty()
     public status: ConquistaStatus;
 
     @Column()
+    @ApiProperty()
     public nome: string
 
     @Column()
+    @ApiProperty()
     public descricao: string
 
-    @ManyToOne(() => Usuario, usuario => usuario.conquistas)
+    @ApiProperty({type: () => Usuario})
+    @ManyToOne(() => Usuario, usuario => usuario.conquistas, {
+        onDelete: 'CASCADE'
+    })
     usuario: Usuario;
 
     constructor(

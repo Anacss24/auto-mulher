@@ -1,4 +1,5 @@
-import { Injectable } from "@nestjs/common";
+import { CreateConquistaDto } from './../../application/dtos/create-conquista.dto';
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Conquista } from "../entities/conquista.entity";
@@ -11,8 +12,9 @@ export class ConquistaService {
     
     ) { }
 
-    async createConquista(conquista: Conquista):Promise<Conquista> {
-        return await this.conquistaRepository.save(conquista)
+    async createConquista(conquista: CreateConquistaDto):Promise<Conquista> {
+        
+        return await this.conquistaRepository.save(conquista)      
     }
 
     async getConquistaAll():Promise<Conquista[]> {
