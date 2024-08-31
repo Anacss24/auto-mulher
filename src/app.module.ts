@@ -13,11 +13,7 @@ import { Conquista } from './domain/entities/conquista.entity';
   imports: [
     TypeOrmModule.forRoot({
       type:'postgres',
-      host:'localhost',
-      port: 5432,
-      database: 'db_auto_mulher',
-      username: 'postgres',
-      password: 'root',
+      url: process.env.DATABASE_URL,
       entities: [Usuario, Postagem, Conquista],
       synchronize: true,
 
