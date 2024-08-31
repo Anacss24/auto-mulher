@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post } from "@nestjs/common";
 import { ConquistaService } from "../../domain/services/conquista.service";
 import { Conquista } from "../../domain/entities/conquista.entity";
 import { CreateConquistaDto } from "../dtos/create-conquista.dto";
@@ -17,5 +17,22 @@ export class ConquistaController{
     @Get()
     getConquistaAll() {
         return this.conquistaService.getConquistaAll()
+    }
+
+    @Get(':id')
+    getConquistaById(@Param('id') id: string) {
+        try {
+
+            return this.conquistaService.getConquistaById(id)
+
+        } catch(error) {
+            throw new NotFoundException({error: error.message})
+
+        }
+    }
+
+    @Delete(':id')
+    deleteUsuario(@Param('id') id: string) {
+        return this.conquistaService.deleteConquista(id)
     }
 }

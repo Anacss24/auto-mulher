@@ -14,13 +14,13 @@ export class Usuario {
     @ApiProperty()
     public nomeCompleto: string;
 
-    @Column({ unique: true })
+    @Column()
     @ApiProperty()
     public email: string;
 
     @Column()
     @ApiProperty()
-    senha: string
+    public senha: string
 
     @ApiProperty({type: () => Conquista})
     @OneToMany(() => Conquista, conquista => conquista.usuario)

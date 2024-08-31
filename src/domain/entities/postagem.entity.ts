@@ -19,7 +19,7 @@ export class Postagem {
 
     @ApiProperty({ type: () => Usuario})
     @ManyToOne(() => Usuario, usuario => usuario.postagens, {
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
     })
     usuario: Usuario;
 

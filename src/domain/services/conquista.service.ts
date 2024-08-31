@@ -1,7 +1,7 @@
 import { CreateConquistaDto } from './../../application/dtos/create-conquista.dto';
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { DeleteResult, Repository } from "typeorm";
 import { Conquista } from "../entities/conquista.entity";
 
 @Injectable()
@@ -24,4 +24,20 @@ export class ConquistaService {
             }
         })
     }
+
+    async getConquistaById(id: string): Promise<Conquista> {
+        return await this.conquistaRepository.findOne({
+             where: {id},
+             relations: {
+                 usuario: true
+             }
+        })
+     
+     }
+
+     async deleteConquista(id: string): Promise<DeleteResult> {
+        
+        return await this.conquistaRepository.delete(id)
+    }
+     
 }
