@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Conquista } from "./conquista.entity";
+import { Postagem } from "./postagem.entity";
 
 @Entity('usuarios')
 export class Usuario {
@@ -11,6 +13,13 @@ export class Usuario {
 
     @Column({ unique: true })
     public email: string;
+
+    @OneToMany(() => Conquista, conquista => conquista.usuario)
+    conquistas: Conquista [];
+    
+    @OneToMany(() => Postagem, postagem => postagem.usuario)
+    postagens: Postagem [];
+
 
     constructor(
         nomeCompleto: string,

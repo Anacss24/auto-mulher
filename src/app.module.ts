@@ -6,6 +6,8 @@ import { Usuario } from './domain/entities/usuario.entity';
 import { DomainModule } from './domain/domain.module';
 import { AplicationModule } from './application/application.module';
 import { InfrastructureModule } from './infrastructure/infrastructure.module';
+import { Postagem } from './domain/entities/postagem.entity';
+import { Conquista } from './domain/entities/conquista.entity';
 
 @Module({
   imports: [
@@ -16,7 +18,7 @@ import { InfrastructureModule } from './infrastructure/infrastructure.module';
       database: 'db_auto_mulher',
       username: 'postgres',
       password: 'root',
-      entities: [Usuario],
+      entities: [Usuario, Postagem, Conquista],
       synchronize: true,
 
     }),
