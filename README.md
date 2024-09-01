@@ -11,6 +11,9 @@
 ## Futuras Evoluções 
 
 ## Desenvolvedoras
-[<img src="https://avatars.githubusercontent.com/u/101267392?s=100" /><br /><sub>@Anacss24</sub>](https://github.com/Anacss24)
+|Ana Claudia | Rafaeela |
+|----------|----------|
+| <img src="https://avatars.githubusercontent.com/u/101267392?s=100" /> | <img src="https://avatars.githubusercontent.com/u/144054244?s=100" /> |
+| [Anacss24](https://github.com/Anacss24) | [rafaelaatanasio](https://github.com/rafaelaatanasio) |
 
-[<img src="https://avatars.githubusercontent.com/u/144054244?s=100" /><br /><sub>@rafaelaatanasio</sub>](https://github.com/rafaelaatanasio)
+
