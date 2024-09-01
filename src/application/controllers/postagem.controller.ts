@@ -1,9 +1,8 @@
 import { CreatePostagemDto } from '../dtos/create-postagem.dto';
 import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from "@nestjs/common";
 import { PostagemService } from "../../domain/services/postagem.service";
-import { Postagem } from "../../domain/entities/postagem.entity";
 import { ApiTags } from '@nestjs/swagger';
-import { UpdatePostagemDto } from '../dtos/update-postagem.dto';
+
 
 
 @ApiTags('Postagem')

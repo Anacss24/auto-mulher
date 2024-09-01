@@ -2,7 +2,7 @@ import { BadRequestException, Body, Controller, Delete, Get, HttpException, Http
 import { UsuarioService } from "../../domain/services/usuario.service";
 import { CreateUsuarioDto } from "../dtos/create-usuario.dto";
 import { ApiInternalServerErrorResponse, ApiTags } from "@nestjs/swagger";
-import { UpdateUsuarioDto } from "../dtos/update-usuario.dto";
+
 
 @ApiTags('Usuario')
 @Controller('usuarios')
