@@ -20,6 +20,43 @@ AutoMulher é voltado para o desenvolvimento pessoal e autoconhecimento, para ap
   <li>Git/Github</li>
 </ul>
 
+## Instalação
+
+### Clonar o projeto 
+```
+ git clone https://github.com/Anacss24/auto-mulher.git 
+```
+
+### Entrar no diretório
+```
+ cd auto-mulher
+```
+### Instalar as dependências
+
+```
+ npm install
+```
+## Banco de dados
+
+### Local - app.module.ts
+
+```
+      type: "",
+      host: "",
+      port: "",
+      database: "",
+      username: "",
+      password: "",
+```
+### Nuvem - Criar o arquivo .env
+```
+DATABASE_URL= ""
+USER=seuUsuario = ""
+NODE_ENV=development = ""
+PORT= ""
+```
+
+
 ## Futuras Evoluções 
 
 <ul>
